@@ -10,7 +10,7 @@ node{
     stage('ExecuteSonarQubeReport'){
         sh "${mavenHome}/bin/mvn clean sonar:sonar"
     }
-    stage('UploadArtifactIntoNexuxRepo'){
+   /* stage('UploadArtifactIntoNexuxRepo'){
         sh "${mavenHome}/bin/mvn clean deploy"
     }
     stage('DeploytheAppIntoTomcat'){
@@ -18,6 +18,7 @@ node{
     sh "scp -o StrictHostKeyChecking=no target/maven-web-appliocation.war ec2-user@13.233.207.116:/opt/apache-tomcat-9.0.53/webapps"
     }
     }
+    */
     stage('SendEmailNotification'){
         mail bcc: 'radha.deoghare724@gmail.com', body: '''Build Over regards. RD''', cc: 'radha.deoghare724@gmail.com', from: '', replyTo: '', subject: 'Build Over!', to: 'radha.deoghare724@gmail.com'
     }
