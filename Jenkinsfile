@@ -1,4 +1,4 @@
-node{
+node('wallmart-node'){
     
     def mavenHome = tool name: "maven3.8.2"
     stage('checkoutcode'){
@@ -19,7 +19,7 @@ node{
     }
     }
     */
-    stage('SendEmailNotification'){
+   /* stage('SendEmailNotification'){
         mail bcc: 'radha.deoghare724@gmail.com', body: '''Build Over regards. RD''', cc: 'radha.deoghare724@gmail.com', from: '', replyTo: '', subject: 'Build Over!', to: 'radha.deoghare724@gmail.com'
-    }
+    } */
 }
